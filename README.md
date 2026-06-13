@@ -1,59 +1,71 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Nama  : Afzaal Abrar Hidayat
+# NIM   : 240605110206
+# Kelas : Pemrograman Web Teori [B]
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# aplikasi-blog-240605110206 #
 
-## About Laravel
+## Pengembangan Aplikasi Blog (Tugas UAS)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Proyek ini merupakan pengembangan lebih lanjut dari Sistem Manajemen Konten (CMS) Blog yang telah dibangun pada Modul 10. Pada tahap UAS ini, aplikasi dilengkapi dengan **Halaman Publik (Pengunjung)** berbasis framework **Laravel** yang terintegrasi dengan database `db_blog` dari CMS.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Halaman publik ini dapat diakses oleh siapa saja secara terbuka tanpa perlu melakukan proses login, dengan tampilan tema yang bersih, sederhana, konsisten, dan elegan menggunakan Bootstrap/CSS.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Utama Halaman Pengunjung
 
-## Learning Laravel
+### 1. Halaman Utama (Home Page)
+* **Artikel Terbaru**: Menampilkan 5 artikel paling update yang dikelola dari CMS.
+* **Widget Kategori**: Bilah samping (sidebar) yang menampilkan daftar kategori artikel.
+* **Filter Kategori**: Pengunjung dapat menyaring dan menampilkan artikel berdasarkan kategori tertentu yang diklik pada widget.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 2. Halaman Detail Artikel (Detail Page)
+* **Konten Lengkap**: Menampilkan isi artikel secara utuh beserta informasi penulis dan tanggal rilis.
+* **Artikel Terkait**: Bilah samping (sidebar) yang merekomendasikan 5 artikel lain dari kategori yang sama untuk meningkatkan keterbacaan.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Teknologi yang Digunakan
+* **Framework Backend**: Laravel
+* **Database**: MySQL (`db_blog`)
+* **Frontend**: Blade Templating, HTML5, CSS3, Bootstrap
 
-## Laravel Sponsors
+## Fitur CMS Eksisting (Modul 10)
+Sebelumnya, sistem ini telah memiliki fitur internal khusus penulis (wajib login) yang meliputi:
+* Manajemen Artikel (CRUD)
+* Manajemen Penulis/User (CRUD)
+* Manajemen Kategori Artikel (CRUD)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 💻 Langkah-langkah Menjalankan Aplikasi secara Lokal
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Ikuti panduan teknis berikut untuk menjalankan proyek aplikasi blog ini di lingkungan lokal:
 
-## Contributing
+### 1. Persiapan Proyek
+* Pastikan seluruh folder proyek UAS ini telah diunduh (*clone/download*) dan diekstrak ke komputer.
+* Pastikan komputer telah terinstal **PHP (minimal versi 8.2)** dan **MySQL** (bawaan XAMPP), serta **Composer**.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. Instalasi Dependensi Vendor
+Buka terminal (Command Prompt/Git Bash), masuk ke direktori proyek, lalu jalankan perintah berikut untuk mengunduh pustaka pihak ketiga:
+```bash
+composer install
+```
 
-## Code of Conduct
+### 3. Konfigurasi Environment (.env)
+1. Salin file `.env.example` yang ada di dalam proyek menjadi file baru bernama `.env`.
+2. Buka file `.env` menggunakan kode editor, lalu sesuaikan bagian kredensial database.
+*(Catatan: Sesuai prasyarat UAS, database `db_blog` beserta tabel `penulis`, `kategori_artikel`, dan `artikel` harus sudah tersedia dari data CMS Modul 10).*
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Generate Application Key
+Jalankan perintah berikut di terminal untuk membuat kunci keamanan aplikasi baru:
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Menjalankan Development Server
+1. Pastikan layanan MySQL pada XAMPP Control Panel berada dalam kondisi aktif.
+2. Eksekusi perintah CLI bawaan Laravel untuk menyalakan server pengembangan:
+   ```bash
+   php artisan serve
+   ```
+3. Buka browser Anda dan akses aplikasi melalui URL default berikut:
+   ```text
+   http://127.0.0.1:8000
+   ```
